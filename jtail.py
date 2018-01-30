@@ -42,6 +42,7 @@ def main(args):
     for data in watch(args.file, args.keys, from_what):
         sys.stdout.write(json.dumps(data) + '\n')
 
+        
 def get_parser():
     parser = argparse.ArgumentParser(
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
@@ -54,6 +55,7 @@ def get_parser():
     # File to watch
     parser.add_argument('--file', '-f', help='File to tail', required=True)
     
+    # Follow file from the end
     parser.add_argument('--follow', action='store_true', help='Follow from end (skips directly to end of file)')
     
     return parser
