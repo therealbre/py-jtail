@@ -27,6 +27,8 @@ def watch(fname, keys=None, from_what=os.SEEK_SET):
                     yield data
                 else:
                     time.sleep(0.5)
+            except KeyboardInterrupt as ex:
+                raise ex
             except:
                 pass
             
